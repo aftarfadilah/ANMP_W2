@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/game_navigation"
+    app:startDestination="@id/nameFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.aftarfadilah.anmp_w2.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/actionGameOver"
+            app:destination="@id/gameOverFragment"
+            app:enterAnim="@android:anim/slide_in_left" />
+        <argument android:name="playerName" />
+    </fragment>
+    <fragment
+        android:id="@+id/gameOverFragment"
+        android:name="com.aftarfadilah.anmp_w2.GameOverFragment"
+        android:label="fragment_game_over"
+        tools:layout="@layout/fragment_game_over" >
+        <action
+            android:id="@+id/actionMainFragment"
+            app:destination="@id/nameFragment"
+            app:enterAnim="@android:anim/slide_in_left" />
+        <argument android:name="score"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/nameFragment"
+        android:name="com.aftarfadilah.anmp_w2.NameFragment"
+        android:label="fragment_name"
+        tools:layout="@layout/fragment_name" >
+        <action
+            android:id="@+id/actionStart"
+            app:destination="@id/mainFragment"
+            app:enterAnim="@android:anim/slide_in_left" />
+    </fragment>
+</navigation>

@@ -5,4 +5,10 @@
     <string name="home">Home</string>
     <string name="history">History</string>
     <string name="profile">Profile</string>
+    <string name="addition">Addition</string>
+    <string name="subtraction">Subtraction</string>
+    <string name="multiplication">Multiplication</string>
+    <string name="mathematics_operation">Mathematics Operation</string>
+    <string name="autocompletetextview">AutoCompleteTextView</string>
+    <string name="level">Level</string>
 </resources>

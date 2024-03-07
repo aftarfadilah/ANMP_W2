@@ -17,15 +17,18 @@ class MathActivity : AppCompatActivity() {
         binding = ActivityMathBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
+//        setContentView(R.layout.activity_math)
 
-        navController = (supportFragmentManager.findFragmentById(androidx.navigation.fragment.R.id.nav_host_fragment_container) as NavHostFragment).navController
-        NavigationUI.setupActionBarWithNavController(this, navController)
-
+        navController = (supportFragmentManager.findFragmentById(R.id.nav_host_fragment_container) as NavHostFragment).navController
+        NavigationUI.setupActionBarWithNavController(this, navController, binding.drawerLayout)
+        NavigationUI.setupWithNavController(binding.navView, navController)
         binding.bottomNav.setupWithNavController(navController)
     }
 
     override fun onSupportNavigateUp(): Boolean {
-        return navController.navigateUp()
+//        return navController.navigateUp()
+        return NavigationUI.navigateUp(navController, binding.drawerLayout)
+                || super.onSupportNavigateUp()
     }
 
 }
